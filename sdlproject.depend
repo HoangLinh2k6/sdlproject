@@ -1,23 +1,29 @@
 # depslib dependency file v1.0
-1741960894 source:d:\code\sdlproject\main.cpp
+1743351584 source:d:\code\sdlproject\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 	"defs.h"
 	"background.h"
 	"texture.h"
 	"window.h"
 
-1741956438 d:\code\sdlproject\defs.h
+1743350258 d:\code\sdlproject\defs.h
 
-1741960952 d:\code\sdlproject\background.h
-	"texture.h"
-
-1741964128 d:\code\sdlproject\texture.h
+1743351571 d:\code\sdlproject\background.h
 	<SDL.h>
 	<SDL_image.h>
+	"texture.h"
+	"exception.h"
 
-1741964041 d:\code\sdlproject\window.h
+1743351619 d:\code\sdlproject\texture.h
+	<SDL.h>
+	<SDL_image.h>
+	"exception.h"
+
+1743349729 d:\code\sdlproject\window.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"

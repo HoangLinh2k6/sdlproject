@@ -34,7 +34,9 @@ struct window{
         IMG_Quit();
 
         SDL_DestroyRenderer(renderer);
+        renderer = nullptr;
         SDL_DestroyWindow(window);
+        window = nullptr;
         SDL_Quit();
     }
 };
