@@ -21,16 +21,12 @@ struct Texture{
     }
 
 
-    void render( int x, int y)
+    void render( int x, int y, int a = 0)
     {
-        SDL_Rect dest;
-
-
-        dest.x = x;
-        dest.y = y;
-        SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
-
-        SDL_RenderCopy(renderer, texture, NULL, &dest);
+        SDL_Rect renderQuad = { x, y, width, height };
+        SDL_RendererFlip flip = SDL_FLIP_NONE;
+        SDL_RenderCopy(renderer, texture, NULL, &renderQuad);
+        SDL_RenderCopyEx( renderer, texture, NULL, &renderQuad, a, NULL, flip );
 
     }
 
