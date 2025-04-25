@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+
 #include "texture.h"
 #include "exception.h"
 
@@ -16,12 +17,12 @@ struct Background {
 
     void scroll(int distance) {
         scrollingOffset -= distance;
-        if( scrollingOffset < 0 ) { scrollingOffset = texture.width; }
+        if( scrollingOffset < 0 ) { scrollingOffset = texture.w; }
     }
 
     void render() {
         texture.render( scrollingOffset, 0);
-        texture.render( scrollingOffset - texture.width, 0);
+        texture.render( scrollingOffset - texture.w, 0);
     }
     void quit() {
         texture.free();

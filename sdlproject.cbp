@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="background.h" />
 		<Unit filename="ball.h" />
+		<Unit filename="block.h" />
 		<Unit filename="defs.h" />
 		<Unit filename="exception.h" />
 		<Unit filename="main.cpp" />

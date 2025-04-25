@@ -1,6 +1,9 @@
 # depslib dependency file v1.0
-1744372380 source:d:\code\sdlproject\main.cpp
+1745572743 source:d:\code\sdlproject\main.cpp
 	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -10,21 +13,22 @@
 	"texture.h"
 	"window.h"
 	"ball.h"
+	"block.h"
 
-1743350258 d:\code\sdlproject\defs.h
+1745571662 d:\code\sdlproject\defs.h
 
-1744364865 d:\code\sdlproject\background.h
+1745570756 d:\code\sdlproject\background.h
 	<SDL.h>
 	<SDL_image.h>
 	"texture.h"
 	"exception.h"
 
-1744364853 d:\code\sdlproject\texture.h
+1745572574 d:\code\sdlproject\texture.h
 	<SDL.h>
 	<SDL_image.h>
 	"exception.h"
 
-1743349729 d:\code\sdlproject\window.h
+1745570754 d:\code\sdlproject\window.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
@@ -33,9 +37,20 @@
 1741960311 d:\code\sdlproject\exception.h
 	<SDL.h>
 
-1744372380 d:\code\sdlproject\ball.h
+1745572819 d:\code\sdlproject\ball.h
 	<SDL.h>
 	<SDL_image.h>
 	<cmath>
+	"texture.h"
+	"exception.h"
+
+1745572819 d:\code\sdlproject\block.h
+	<SDL.h>
+	<SDL_image.h>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"texture.h"
+	"ball.h"
 	"exception.h"
 
