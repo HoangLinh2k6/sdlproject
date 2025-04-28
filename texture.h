@@ -4,42 +4,18 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include "exception.h"
 struct Texture{
     SDL_Renderer *renderer;
     SDL_Texture *texture;
     int w, h;
-    void setRenderer( SDL_Renderer *_renderer ){
-        renderer = _renderer;
-    }
-    void loadTexture(const char *filename)
-    {
+    void setRenderer( SDL_Renderer *_renderer );
+    void loadTexture(const char *filename);
 
-        texture = IMG_LoadTexture(renderer, filename);
-        if (texture == nullptr)
-            logErrorAndExit( "Load texture %s", IMG_GetError());
-        SDL_QueryTexture(texture, NULL, NULL, &w, &h);
-    }
+    int get_w();
+    int get_h();
 
-    int get_w(){
-        return w;
-    }
-    int get_h(){
-        return h;
-    }
-    void render( int x, int y, int a = 0)
-    {
-        SDL_Rect renderQuad = { x, y, w, h };
-        SDL_RendererFlip flip = SDL_FLIP_NONE;
-        SDL_RenderCopyEx( renderer, texture, NULL, &renderQuad, a, NULL, flip );
+    void render( int x, int y, int angle = 0);
 
-    }
-
-    void free(){
-        if( texture != nullptr ) {
-            SDL_DestroyTexture( texture );
-            texture = nullptr;
-        }
-    }
+    void free();
 };
 #endif // TEXTURE_H

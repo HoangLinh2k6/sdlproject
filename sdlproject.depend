@@ -1,6 +1,83 @@
 # depslib dependency file v1.0
-1745572743 source:d:\code\sdlproject\main.cpp
+1745862735 source:d:\code\sdlproject\main.cpp
+	<cstdlib>
+	<ctime>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"defs.h"
+	"background.h"
+	"window.h"
+	"lever.h"
+
+1745750991 d:\code\sdlproject\defs.h
+
+1745856289 d:\code\sdlproject\background.h
+	<SDL.h>
+	<SDL_image.h>
+	"texture.h"
+
+1745857084 d:\code\sdlproject\texture.h
+	<SDL.h>
+	<SDL_image.h>
+
+1745860741 d:\code\sdlproject\window.h
+	<SDL.h>
+	<SDL_image.h>
+
+1741960311 d:\code\sdlproject\exception.h
+	<SDL.h>
+
+1745861378 d:\code\sdlproject\ball.h
+	<SDL.h>
+	<SDL_image.h>
+	"texture.h"
+	"energy.h"
+
+1745857948 d:\code\sdlproject\block.h
+	<SDL.h>
+	<SDL_image.h>
+	<cmath>
+	<cstdlib>
+	<ctime>
 	<iostream>
+	"texture.h"
+	"ball.h"
+
+1745862737 source:d:\code\sdlproject\window.cpp
+	"window.h"
+	"defs.h"
+	"exception.h"
+
+1745856784 source:d:\code\sdlproject\background.cpp
+	"texture.h"
+	"background.h"
+
+1745857084 source:d:\code\sdlproject\texture.cpp
+	"texture.h"
+
+1745861608 source:d:\code\sdlproject\ball.cpp
+	<cmath>
+	<iostream>
+	"ball.h"
+	"texture.h"
+
+1745857721 source:d:\code\sdlproject\block.cpp
+	<cmath>
+	<cstdlib>
+	<ctime>
+	<iostream>
+	"block.h"
+	"texture.h"
+	"ball.h"
+
+1745861543 d:\code\sdlproject\energy.h
+
+1745861906 source:d:\code\sdlproject\energy.cpp
+	"energy.h"
+
+1745862763 d:\code\sdlproject\lever.h
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -9,48 +86,9 @@
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 	"defs.h"
+	"window.h"
 	"background.h"
 	"texture.h"
-	"window.h"
 	"ball.h"
 	"block.h"
-
-1745571662 d:\code\sdlproject\defs.h
-
-1745570756 d:\code\sdlproject\background.h
-	<SDL.h>
-	<SDL_image.h>
-	"texture.h"
-	"exception.h"
-
-1745572574 d:\code\sdlproject\texture.h
-	<SDL.h>
-	<SDL_image.h>
-	"exception.h"
-
-1745570754 d:\code\sdlproject\window.h
-	<SDL.h>
-	<SDL_image.h>
-	"defs.h"
-	"exception.h"
-
-1741960311 d:\code\sdlproject\exception.h
-	<SDL.h>
-
-1745572819 d:\code\sdlproject\ball.h
-	<SDL.h>
-	<SDL_image.h>
-	<cmath>
-	"texture.h"
-	"exception.h"
-
-1745572819 d:\code\sdlproject\block.h
-	<SDL.h>
-	<SDL_image.h>
-	<cmath>
-	<cstdlib>
-	<ctime>
-	"texture.h"
-	"ball.h"
-	"exception.h"
 

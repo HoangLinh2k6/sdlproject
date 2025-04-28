@@ -32,13 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="background.cpp" />
 		<Unit filename="background.h" />
+		<Unit filename="ball.cpp" />
 		<Unit filename="ball.h" />
+		<Unit filename="block.cpp" />
 		<Unit filename="block.h" />
 		<Unit filename="defs.h" />
+		<Unit filename="energy.cpp" />
+		<Unit filename="energy.h" />
 		<Unit filename="exception.h" />
+		<Unit filename="lever.cpp" />
+		<Unit filename="lever.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="texture.cpp" />
 		<Unit filename="texture.h" />
+		<Unit filename="window.cpp" />
 		<Unit filename="window.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
