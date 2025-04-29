@@ -12,12 +12,14 @@
 #include "texture.h"
 #include "ball.h"
 #include "block.h"
+#include "energy.h"
 #include "lever.h"
 
 Lever::Lever( window& _win):
     win { _win },
     background{ win.renderer,BACKGROUND },
-    ball{ win.renderer,BALL_IMAGE }
+    ball{ win.renderer,BALL_IMAGE },
+    energy{win.renderer}
 {}
 
 void Lever::event(){
@@ -28,7 +30,7 @@ void Lever::event(){
             if( e.key.keysym.scancode == SDL_SCANCODE_UP ) { ball.up(); }
             if( e.key.keysym.scancode == SDL_SCANCODE_DOWN ) { ball.down(); }
             if( e.key.keysym.scancode == SDL_SCANCODE_SPACE ) { ball.Jump() ; }
-            if( e.key.keysym.scancode == SDL_SCANCODE_E ) { ball.useEnergy(); }
+            if( e.key.keysym.scancode == SDL_SCANCODE_E ) { energy.use(); }
         }
     }
 }
@@ -36,12 +38,36 @@ void Lever::event(){
 void Lever::logic(){
     background.scroll(scroll);
     ball.doJump();
+    energy.updateEnergy();
     int RandomNum = std::rand();
-    if( RandomNum % abc == 0 ){
-        block.push_back(createBlock(win.renderer,BALL_IMAGE));
-        abc = 10;
+    if( time == 7){
+        if( RandomNum % 6 == 5 ){
+            for( int lane = -1; lane < 2; lane++){
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, lane ) );
+            }
+        }
+        else if( RandomNum % 6 == 3 || RandomNum % 6 == 1){
+            int lane = std::rand() % 3 ;
+            if( lane == 0 ){
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, -1 ) );
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, 0 ) );
+            }
+            if( lane == 1 ){
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, -1 ) );
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, 1 ) );
+            }
+            if( lane == 2 ){
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, 1 ) );
+                block.push_back( createBlock( win.renderer, STONE_IMAGE, 0 ) );
+            }
+        }
+        else {
+            int lane = std::rand() % 3 - 1;
+            block.push_back( createBlock( win.renderer, STONE_IMAGE, lane ) );
+        }
     }
-    if( abc > 1){ abc --;}
+    time --;
+    if( time == 0){ time = 7; }
     blockSize = block.size();
 
     for( int i = 0; i < blockSize; i++ ){
@@ -53,10 +79,11 @@ void Lever::logic(){
 
 void Lever::render(){
     background.render();
-    ball.render();
+    energy.render();
     for( int i = 0; i < blockSize; i++ ){
         block[i].render();
     }
+    ball.render();
     win.update();
 }
 
@@ -65,6 +92,11 @@ void Lever::deleteBlock(){
         block[0].quit();
         block.erase(block.begin());
     }
+}
+
+void Lever::gameSpeed(){
+    if( energy.useEnergy ) delay = 50;
+    else delay = 100;
 }
 
 void Lever::quit(){

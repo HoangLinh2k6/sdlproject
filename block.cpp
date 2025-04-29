@@ -33,8 +33,7 @@ void Block::quit(){
     texture.free();
 }
 
-Block createBlock(SDL_Renderer *renderer, const char *filename){
-    int lane = std::rand() % 3 - 1;
+Block createBlock(SDL_Renderer *renderer, const char *filename, int lane){
     Block block( renderer, filename, lane );
     return block;
 }

@@ -43,9 +43,6 @@ void Ball::roll(){
     else RotationAngle = 60;
 }
 
-void Ball::useEnergy(){
-    energy.use();
-}
 
 void Ball::render(){
     y = y0 - y1 + 100 * lane;

@@ -23,6 +23,6 @@ struct Block{
     void render();
     void quit();
 };
-Block createBlock(SDL_Renderer *renderer, const char *filename);
+Block createBlock(SDL_Renderer *renderer, const char *filename, int lane);
 
 #endif // BLOCK_H

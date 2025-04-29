@@ -21,7 +21,10 @@ int main( int argc , char* argv[] ){
         lever.event();
         lever.logic();
         lever.render();
-        SDL_Delay(100);
+        lever.deleteBlock();
+        lever.gameSpeed();
+
+        SDL_Delay( lever.delay );
     }
     lever.quit();
     win.quit();

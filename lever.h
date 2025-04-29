@@ -21,8 +21,10 @@ struct Lever{
     window win;
     Background background;
     Ball ball;
+    Energy energy;
     std::vector<Block> block;
-    int  a = 100, x = 100, scroll = 50, abc = 10, blockSize;
+    int  delay = 100, scroll = 50, time = 7, blockSize;
+
     bool endgame = false;
     Lever( window& _win);
 
@@ -30,6 +32,7 @@ struct Lever{
     void logic();
     void render();
     void deleteBlock();
+    void gameSpeed();
 
     void quit();
 };

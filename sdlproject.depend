@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745862735 source:d:\code\sdlproject\main.cpp
+1745918617 source:d:\code\sdlproject\main.cpp
 	<cstdlib>
 	<ctime>
 	<SDL.h>
@@ -11,7 +11,7 @@
 	"window.h"
 	"lever.h"
 
-1745750991 d:\code\sdlproject\defs.h
+1745918957 d:\code\sdlproject\defs.h
 
 1745856289 d:\code\sdlproject\background.h
 	<SDL.h>
@@ -29,13 +29,13 @@
 1741960311 d:\code\sdlproject\exception.h
 	<SDL.h>
 
-1745861378 d:\code\sdlproject\ball.h
+1745900091 d:\code\sdlproject\ball.h
 	<SDL.h>
 	<SDL_image.h>
 	"texture.h"
 	"energy.h"
 
-1745857948 d:\code\sdlproject\block.h
+1745919529 d:\code\sdlproject\block.h
 	<SDL.h>
 	<SDL_image.h>
 	<cmath>
@@ -57,13 +57,13 @@
 1745857084 source:d:\code\sdlproject\texture.cpp
 	"texture.h"
 
-1745861608 source:d:\code\sdlproject\ball.cpp
+1745899586 source:d:\code\sdlproject\ball.cpp
 	<cmath>
 	<iostream>
 	"ball.h"
 	"texture.h"
 
-1745857721 source:d:\code\sdlproject\block.cpp
+1745919282 source:d:\code\sdlproject\block.cpp
 	<cmath>
 	<cstdlib>
 	<ctime>
@@ -72,12 +72,15 @@
 	"texture.h"
 	"ball.h"
 
-1745861543 d:\code\sdlproject\energy.h
+1745901454 d:\code\sdlproject\energy.h
+	<iostream>
+	<SDL.h>
+	"window.h"
 
-1745861906 source:d:\code\sdlproject\energy.cpp
+1745901454 source:d:\code\sdlproject\energy.cpp
 	"energy.h"
 
-1745862763 d:\code\sdlproject\lever.h
+1745920213 d:\code\sdlproject\lever.h
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -91,4 +94,20 @@
 	"texture.h"
 	"ball.h"
 	"block.h"
+
+1745919582 source:d:\code\sdlproject\lever.cpp
+	<cstdlib>
+	<ctime>
+	<vector>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	"defs.h"
+	"background.h"
+	"texture.h"
+	"ball.h"
+	"block.h"
+	"energy.h"
+	"lever.h"
 
