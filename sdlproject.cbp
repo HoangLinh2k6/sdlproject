@@ -42,6 +42,7 @@
 		<Unit filename="energy.cpp" />
 		<Unit filename="energy.h" />
 		<Unit filename="exception.h" />
+		<Unit filename="game.h" />
 		<Unit filename="lever.cpp" />
 		<Unit filename="lever.h" />
 		<Unit filename="main.cpp" />
