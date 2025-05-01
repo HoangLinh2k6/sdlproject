@@ -1,9 +1,9 @@
 #include "texture.h"
 #include "background.h"
 
-Background::Background( SDL_Renderer *renderer, const char *filename ) {
-    texture.setRenderer(renderer);
-    texture.loadTexture(filename);
+Background::Background( SDL_Renderer *renderer, const char *filename ):
+    texture{ renderer, filename }
+{
 }
 
 void Background::scroll(int distance) {

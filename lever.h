@@ -24,8 +24,8 @@ struct Lever{
     Energy energy;
     std::vector<Block> block;
     int  delay = 100, scroll = 50, time = 7, blockSize;
-
     bool endgame = false;
+
     Lever( window& _win);
 
     void event();

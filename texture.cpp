@@ -1,14 +1,11 @@
 #include "texture.h"
 
-void Texture::setRenderer( SDL_Renderer *_renderer ){
-    renderer = _renderer;
-}
-void Texture::loadTexture(const char *filename)
-{
-
-    texture = IMG_LoadTexture(renderer, filename);
-    SDL_QueryTexture(texture, NULL, NULL, &w, &h);
-}
+Texture::Texture( SDL_Renderer *_renderer, const char *filename):
+    renderer { _renderer },
+    texture { IMG_LoadTexture(renderer, filename) }
+    {
+        SDL_QueryTexture(texture, NULL, NULL, &w, &h);
+    }
 
 int Texture::get_w(){
     return w;

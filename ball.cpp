@@ -4,11 +4,11 @@
 #include "ball.h"
 #include "texture.h"
 
-Ball::Ball( SDL_Renderer *renderer, const char *filename ){
-    texture.setRenderer(renderer);
-    texture.loadTexture(filename);
-    w = texture.get_w();
-    h = texture.get_h();
+Ball::Ball( SDL_Renderer *renderer, const char *filename ):\
+    texture{ renderer, filename },
+    w{ texture.get_w() },
+    h{ texture.get_h() }
+{
 }
 
 void Ball::up(){

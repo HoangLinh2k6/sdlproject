@@ -8,12 +8,12 @@
 #include "ball.h"
 
 
-Block::Block( SDL_Renderer *renderer, const char *filename, int _lane ){
-    texture.setRenderer(renderer);
-    texture.loadTexture(filename);
-    lane = _lane;
-    w = texture.get_w();
-    h = texture.get_h();
+Block::Block( SDL_Renderer *renderer, const char *filename, int _lane ):
+    texture{ renderer, filename },
+    w{ texture.get_w() },
+    h{ texture.get_h() },
+    lane{ _lane }
+{
 }
 void Block::scroll(int distance) {
     x -= distance;
@@ -23,7 +23,7 @@ void Block::render(){
     texture.render( x, y );
 }
 bool Block::checkCollision( Ball ball){
-    return ( ball.lane == lane &&
+    return ( !ball.jump &&
            ( ball.x + ball.w <= x + w )&&
            ( ball.x + ball.w >= x )&&
            ( ball.y + ball.h <= y + h )&&

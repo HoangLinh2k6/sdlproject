@@ -20,6 +20,10 @@ void window::init() {
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
     SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+    if (TTF_Init() == -1) {
+        SDL_Log("TTF_Init failed: %s", TTF_GetError());
+    }
 }
 
 void window::quit()

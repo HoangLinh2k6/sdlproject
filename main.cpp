@@ -11,27 +11,20 @@
 #include "background.h"
 #include "window.h"
 #include "lever.h"
+#include "lost.h"
+#include "menu.h"
 #include "game.h"
+#include "button.h"
 
-Game intro( window& win ){
-    Background background( win.renderer,BACKGROUND );
-    while(true){
-        SDL_Event e;
-        background.render();
-        win.update();
-        while (SDL_PollEvent(&e)) {
-            if ( e.type == SDL_QUIT ){
-                background.quit();
-                return Game::EndGame ;
-            }
-            else if( e.type == SDL_KEYDOWN){
-                if( e.key.keysym.scancode == SDL_SCANCODE_SPACE ){
-                        background.quit();
-                        return Game::Level ;
-                }
-            }
-        }
+Game menu( window& win ){
+    Menu menu( win );
+
+    while( menu.game == Game::Menu ){
+        menu.render();
+        menu.event();
     }
+    menu.quit();
+    return menu.game;
 }
 Game lever( window& win ){
     Lever lever( win );
@@ -49,36 +42,26 @@ Game lever( window& win ){
 }
 
 Game lost( window& win ){
-    Background background( win.renderer,BACKGROUND );
-    while(true){
-        SDL_Event e;
-        background.render();
-        win.update();
-        while (SDL_PollEvent(&e)) {
-            if ( e.type == SDL_QUIT ){
-                background.quit();
-                return Game::EndGame ;
-            }
-            else if( e.type == SDL_KEYDOWN){
-                if( e.key.keysym.scancode == SDL_SCANCODE_RETURN ){
-                        background.quit();
-                        return Game::Intro;
-                }
-            }
-        }
+    Lost lost( win );
+
+    while( lost.game == Game::Lost ){
+        lost.render();
+        lost.event();
     }
+    lost.quit();
+    return lost.game;
 }
 
 int main( int argc , char* argv[] ){
     window win;
     win.init();
     std::srand(std::time(nullptr));
-    Game game = Game::Intro;
+    Game game = Game::Menu;
     while( game != Game::EndGame ){
         switch( game ){
-            case Game::Intro : game = intro( win); break;
+            case Game::Menu  : game = menu ( win ); break;
             case Game::Level : game = lever( win ); break;
-            case Game::Lost  : game = lost( win ); break;
+            case Game::Lost  : game = lost ( win ); break;
         }
     }
     win.quit();

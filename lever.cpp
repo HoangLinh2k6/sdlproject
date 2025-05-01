@@ -19,18 +19,27 @@ Lever::Lever( window& _win):
     win { _win },
     background{ win.renderer,BACKGROUND },
     ball{ win.renderer,BALL_IMAGE },
-    energy{win.renderer}
+    energy{ win.renderer }
 {}
 
 void Lever::event(){
     SDL_Event e;
-    while (SDL_PollEvent(&e)) {
-        if ( e.type == SDL_QUIT ) endgame = true;
-        else if( e.type == SDL_KEYDOWN){
-            if( e.key.keysym.scancode == SDL_SCANCODE_UP ) { ball.up(); }
-            if( e.key.keysym.scancode == SDL_SCANCODE_DOWN ) { ball.down(); }
-            if( e.key.keysym.scancode == SDL_SCANCODE_SPACE ) { ball.Jump() ; }
-            if( e.key.keysym.scancode == SDL_SCANCODE_E ) { energy.use(); }
+    while( SDL_PollEvent(&e) ){
+        switch( e.type ){
+            case SDL_QUIT: endgame = true; break;
+
+            case SDL_KEYDOWN:
+                switch( e.key.keysym.scancode ){
+                    case SDL_SCANCODE_UP:    ball.up();    break;
+                    case SDL_SCANCODE_DOWN:  ball.down();  break;
+                    case SDL_SCANCODE_SPACE: ball.Jump();  break;
+                    case SDL_SCANCODE_E:     energy.use(); break;
+
+                    default: break;
+                }
+                break;
+
+            default: break;
         }
     }
 }

@@ -2,7 +2,7 @@
 #define GAME_H
 
 enum class Game{
-    Intro,
+    Menu,
     Level,
     Lost,
     EndGame

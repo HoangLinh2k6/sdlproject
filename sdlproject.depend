@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745927985 source:d:\code\sdlproject\main.cpp
+1746121910 source:d:\code\sdlproject\main.cpp
 	<cstdlib>
 	<ctime>
 	<SDL.h>
@@ -11,22 +11,27 @@
 	"background.h"
 	"window.h"
 	"lever.h"
+	"lost.h"
+	"menu.h"
 	"game.h"
+	"button.h"
 
-1745918957 d:\code\sdlproject\defs.h
+1746119058 d:\code\sdlproject\defs.h
 
 1745856289 d:\code\sdlproject\background.h
 	<SDL.h>
 	<SDL_image.h>
 	"texture.h"
 
-1745857084 d:\code\sdlproject\texture.h
+1746003091 d:\code\sdlproject\texture.h
 	<SDL.h>
 	<SDL_image.h>
 
-1745860741 d:\code\sdlproject\window.h
+1746121970 d:\code\sdlproject\window.h
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 
 1741960311 d:\code\sdlproject\exception.h
 	<SDL.h>
@@ -52,20 +57,20 @@
 	"defs.h"
 	"exception.h"
 
-1745856784 source:d:\code\sdlproject\background.cpp
+1746003091 source:d:\code\sdlproject\background.cpp
 	"texture.h"
 	"background.h"
 
-1745857084 source:d:\code\sdlproject\texture.cpp
+1746003091 source:d:\code\sdlproject\texture.cpp
 	"texture.h"
 
-1745899586 source:d:\code\sdlproject\ball.cpp
+1746003091 source:d:\code\sdlproject\ball.cpp
 	<cmath>
 	<iostream>
 	"ball.h"
 	"texture.h"
 
-1745919282 source:d:\code\sdlproject\block.cpp
+1746004747 source:d:\code\sdlproject\block.cpp
 	<cmath>
 	<cstdlib>
 	<ctime>
@@ -82,7 +87,7 @@
 1745901454 source:d:\code\sdlproject\energy.cpp
 	"energy.h"
 
-1745920213 d:\code\sdlproject\lever.h
+1746031193 d:\code\sdlproject\lever.h
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -97,7 +102,7 @@
 	"ball.h"
 	"block.h"
 
-1745920213 source:d:\code\sdlproject\lever.cpp
+1746030983 source:d:\code\sdlproject\lever.cpp
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -113,5 +118,54 @@
 	"energy.h"
 	"lever.h"
 
-1745926359 d:\code\sdlproject\game.h
+1746027562 d:\code\sdlproject\game.h
+
+1746121537 source:d:\code\sdlproject\button.cpp
+	"button.h"
+
+1746120080 d:\code\sdlproject\button.h
+	"texture.h"
+	"font.h"
+
+1746030422 d:\code\sdlproject\menu.h
+	<SDL.h>
+	"background.h"
+	"window.h"
+	"game.h"
+	"button.h"
+
+1746121505 source:d:\code\sdlproject\menu.cpp
+	<SDL.h>
+	"menu.h"
+	"defs.h"
+	"background.h"
+	"window.h"
+	"game.h"
+	"button.h"
+
+1746121505 source:d:\code\sdlproject\lost.cpp
+	<SDL.h>
+	"lost.h"
+	"defs.h"
+	"background.h"
+	"window.h"
+	"game.h"
+	"button.h"
+
+1746032649 d:\code\sdlproject\lost.h
+	<SDL.h>
+	"background.h"
+	"window.h"
+	"game.h"
+	"button.h"
+
+1746120418 d:\code\sdlproject\font.h
+	<SDL.h>
+	<SDL_ttf.h>
+
+1746121862 source:d:\code\sdlproject\font.cpp
+	<SDL.h>
+	<SDL_ttf.h>
+	"defs.h"
+	"font.h"
 
