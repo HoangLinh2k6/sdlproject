@@ -8,7 +8,7 @@ struct Button{
     Texture texture;
     Font font;
     int x, y, w, h;
-    Button( SDL_Renderer *renderer, const char *filename, int _x, int _y, const char* text, int _size );
+    Button( SDL_Renderer *renderer, int _x, int _y, const char* text, int _size );
 
     void render();
     bool click( int _x, int _y );

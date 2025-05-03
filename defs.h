@@ -9,5 +9,6 @@
 #define BUTTON_IMAGE "image\\button.png"
 #define BACKGROUND   "image\\bikiniBottom.jpg"
 #define FONT         "font\\Purisa-BoldOblique.ttf"
+#define HIGHSCORE    "highscore.txt"
 
 #endif // DEFS_H

@@ -16,12 +16,14 @@
 #include "texture.h"
 #include "ball.h"
 #include "block.h"
+#include "score.h"
 
 struct Lever{
     window win;
     Background background;
     Ball ball;
     Energy energy;
+    Score score;
     std::vector<Block> block;
     int  delay = 100, scroll = 50, time = 7, blockSize;
     bool endgame = false;

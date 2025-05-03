@@ -10,12 +10,14 @@
 Lost::Lost( window _win ):
     win{ _win},
     background{ win.renderer,BACKGROUND },
-    menuButton{ win.renderer, BUTTON_IMAGE, 300, 200, "Menu", 40 },
-    exitButton{ win.renderer, BUTTON_IMAGE, 300, 300, "Exit", 40 }
+    highScore{ win.renderer, highScore.getHighScore(), 60},
+    menuButton{ win.renderer, 300, 300, "Menu", 40 },
+    exitButton{ win.renderer, 300, 400, "Exit", 40 }
 {}
 
 void Lost::render(){
     background.render();
+    highScore.renderHighScore( 150, 100 );
     menuButton.render();
     exitButton.render();
     win.update();
@@ -53,6 +55,7 @@ void Lost::event(){
 
 void Lost::quit(){
     background.quit();
+    highScore.quit();
     menuButton.quit();
     exitButton.quit();
 }

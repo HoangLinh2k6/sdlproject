@@ -13,6 +13,7 @@ struct Menu{
     window win;
     Background background;
     Button playButton;
+    Button highScoreButton;
     Button exitButton;
     Game game = Game::Menu;
 

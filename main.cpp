@@ -15,6 +15,7 @@
 #include "menu.h"
 #include "game.h"
 #include "button.h"
+#include "score.h"
 
 Game menu( window& win ){
     Menu menu( win );
@@ -52,6 +53,54 @@ Game lost( window& win ){
     return lost.game;
 }
 
+Game highScore( window& win ){
+    Background background( win.renderer, BACKGROUND );
+    Button deleteHighScoreButton( win.renderer, 300, 400, "Delete", 35 );
+    Button quitButton( win.renderer, 300, 500, "Quit", 40 );
+    Score highScore( win.renderer, highScore.getHighScore(), 60 );
+    background.render();
+    highScore.renderHighScore( 150 , 200 );
+    quitButton.render();
+    if( highScore.highScore != 0 )deleteHighScoreButton.render();
+    win.update();
+    SDL_Event e;
+    while(SDL_PollEvent(&e)){
+        switch( e.type ){
+            case SDL_QUIT:
+                highScore.quit();
+                background.quit();
+                quitButton.quit();
+                deleteHighScoreButton.quit();
+                return Game::EndGame;
+                break;
+
+            case SDL_MOUSEBUTTONDOWN:
+                if( e.button.button == SDL_BUTTON_LEFT ){
+                    int x, y;
+                    SDL_GetMouseState( &x, &y );
+
+                    if( quitButton.click( x, y ) ){
+                        highScore.quit();
+                        background.quit();
+                        quitButton.quit();
+                        deleteHighScoreButton.quit();
+                        return Game::Menu;
+                    }
+                    if( deleteHighScoreButton.click( x, y ) ){
+                        highScore.resetHighScore();
+                    }
+                break;
+                }
+            default: break;
+        }
+    }
+    highScore.quit();
+    background.quit();
+    quitButton.quit();
+    deleteHighScoreButton.quit();
+    return Game::HighScore;
+}
+
 int main( int argc , char* argv[] ){
     window win;
     win.init();
@@ -59,9 +108,10 @@ int main( int argc , char* argv[] ){
     Game game = Game::Menu;
     while( game != Game::EndGame ){
         switch( game ){
-            case Game::Menu  : game = menu ( win ); break;
-            case Game::Level : game = lever( win ); break;
-            case Game::Lost  : game = lost ( win ); break;
+            case Game::Menu     : game = menu     ( win ); break;
+            case Game::HighScore: game = highScore( win ); break;
+            case Game::Level    : game = lever    ( win ); break;
+            case Game::Lost     : game = lost     ( win ); break;
         }
     }
     win.quit();

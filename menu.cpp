@@ -9,14 +9,16 @@
 
 Menu::Menu( window& _win ):
     win{ _win},
-    background{ win.renderer, BACKGROUND },
-    playButton{ win.renderer, BUTTON_IMAGE, 300, 200, "Play", 40 },
-    exitButton{ win.renderer, BUTTON_IMAGE, 300, 300, "Exit", 40 }
+    background      { win.renderer, BACKGROUND },
+    playButton      { win.renderer, 300, 200, "Play", 40 },
+    highScoreButton { win.renderer, 300, 300, "HighScore", 20 },
+    exitButton      { win.renderer, 300, 400, "Exit", 40 }
 {}
 
 void Menu::render(){
         background.render();
         playButton.render();
+        highScoreButton.render();
         exitButton.render();
         win.update();
 }
@@ -39,6 +41,10 @@ void Menu::event(){
                         quit();
                         game = Game::Level;
                     }
+                    if( highScoreButton.click( x, y ) ){
+                        quit();
+                        game = Game::HighScore;
+                    }
                     if( exitButton.click( x, y ) ){
                         quit();
                         game = Game::EndGame;
@@ -54,5 +60,6 @@ void Menu::event(){
 void Menu::quit(){
     background.quit();
     playButton.quit();
+    highScoreButton.quit();
     exitButton.quit();
 }

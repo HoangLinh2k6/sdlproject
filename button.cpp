@@ -1,7 +1,8 @@
 #include "button.h"
+#include "defs.h"
 
-Button::Button( SDL_Renderer *renderer, const char *filename, int _x, int _y, const char* text, int _size ):
-    texture{ renderer, filename},
+Button::Button( SDL_Renderer *renderer, int _x, int _y, const char* text, int _size ):
+    texture{ renderer, BUTTON_IMAGE },
     font{ renderer, text, _size },
     x{ _x },
     y{ _y },

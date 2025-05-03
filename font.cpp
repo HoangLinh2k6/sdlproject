@@ -16,7 +16,7 @@ void Font::createTexture( const char* text ){
 
     SDL_Surface* textSurface = TTF_RenderText_Solid( font, text, color );
 
-    if (!textSurface) {
+    if (!textSurface){
         SDL_Log("Failed to render text surface: %s", TTF_GetError());
         SDL_FreeSurface( textSurface );
         return;
@@ -24,7 +24,7 @@ void Font::createTexture( const char* text ){
 
     texture = SDL_CreateTextureFromSurface( renderer, textSurface );
 
-    if (!texture) {
+    if (!texture){
         SDL_Log("Failed to create texture from surface: %s", SDL_GetError());
         SDL_FreeSurface( textSurface );
         return;

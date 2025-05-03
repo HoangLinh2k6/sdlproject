@@ -19,7 +19,8 @@ Lever::Lever( window& _win):
     win { _win },
     background{ win.renderer,BACKGROUND },
     ball{ win.renderer,BALL_IMAGE },
-    energy{ win.renderer }
+    energy{ win.renderer },
+    score{ win.renderer, score.getScore(), 20}
 {}
 
 void Lever::event(){
@@ -46,6 +47,8 @@ void Lever::event(){
 
 void Lever::logic(){
     background.scroll(scroll);
+    score.updateScore();
+    score.updateHighScore();
     ball.doJump();
     energy.updateEnergy();
     int RandomNum = std::rand();
@@ -89,6 +92,7 @@ void Lever::logic(){
 void Lever::render(){
     background.render();
     energy.render();
+    score.renderScore( 600, 50 );
     for( int i = 0; i < blockSize; i++ ){
         block[i].render();
     }

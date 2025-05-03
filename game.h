@@ -5,6 +5,7 @@ enum class Game{
     Menu,
     Level,
     Lost,
+    HighScore,
     EndGame
 };
 

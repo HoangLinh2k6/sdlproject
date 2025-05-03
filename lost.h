@@ -7,10 +7,12 @@
 #include "window.h"
 #include "game.h"
 #include "button.h"
+#include "score.h"
 
 struct Lost{
     window win;
     Background background;
+    Score highScore;
     Button menuButton;
     Button exitButton;
     Lost( window _win );
