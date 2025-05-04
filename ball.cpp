@@ -3,6 +3,7 @@
 
 #include "ball.h"
 #include "texture.h"
+#include "sound.h"
 
 Ball::Ball( SDL_Renderer *renderer, const char *filename ):\
     texture{ renderer, filename },
@@ -25,6 +26,7 @@ void Ball::down(){
 
 void Ball::Jump(){
     jump = true;
+    jumpSound.play();
 }
 
 void Ball::doJump(){
@@ -52,6 +54,7 @@ void Ball::render(){
 
 void Ball::quit(){
     texture.free();
+    jumpSound.quit();
 }
 
 

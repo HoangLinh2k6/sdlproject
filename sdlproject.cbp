@@ -47,6 +47,8 @@
 		<Unit filename="font.cpp" />
 		<Unit filename="font.h" />
 		<Unit filename="game.h" />
+		<Unit filename="highscore.cpp" />
+		<Unit filename="highscore.h" />
 		<Unit filename="lever.cpp" />
 		<Unit filename="lever.h" />
 		<Unit filename="lost.cpp" />
@@ -56,6 +58,8 @@
 		<Unit filename="menu.h" />
 		<Unit filename="score.cpp" />
 		<Unit filename="score.h" />
+		<Unit filename="sound.cpp" />
+		<Unit filename="sound.h" />
 		<Unit filename="texture.cpp" />
 		<Unit filename="texture.h" />
 		<Unit filename="window.cpp" />

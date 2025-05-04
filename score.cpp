@@ -52,7 +52,7 @@ void Score::resetHighScore(){
     if( file ){
         file << 0 << std::endl;
     }
-    updateHighScore();
+    highScore = 0;
 }
 
 const char* Score::getScore(){

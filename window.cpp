@@ -21,14 +21,22 @@ void window::init() {
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
     SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    if (TTF_Init() == -1) {
+    if( TTF_Init() == -1 ){
         SDL_Log("TTF_Init failed: %s", TTF_GetError());
     }
+
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 ){
+       logErrorAndExit( "SDL_mixer could not initialize! SDL_mixer Error: %s\n",
+                        Mix_GetError() );
+    }
+
 }
 
 void window::quit()
 {
     IMG_Quit();
+    Mix_Quit();
+    TTF_Quit();
 
     SDL_DestroyRenderer(renderer);
     renderer = nullptr;

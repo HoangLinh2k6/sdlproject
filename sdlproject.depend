@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1746256669 source:d:\code\sdlproject\main.cpp
+1746386126 source:d:\code\sdlproject\main.cpp
 	<cstdlib>
 	<ctime>
 	<SDL.h>
@@ -7,17 +7,15 @@
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 	<iostream>
-	"defs.h"
-	"background.h"
 	"window.h"
 	"lever.h"
 	"lost.h"
 	"menu.h"
+	"highscore.h"
 	"game.h"
-	"button.h"
-	"score.h"
+	"sound.h"
 
-1746188487 d:\code\sdlproject\defs.h
+1746382623 d:\code\sdlproject\defs.h
 
 1745856289 d:\code\sdlproject\background.h
 	<SDL.h>
@@ -37,11 +35,12 @@
 1741960311 d:\code\sdlproject\exception.h
 	<SDL.h>
 
-1745900091 d:\code\sdlproject\ball.h
+1746386005 d:\code\sdlproject\ball.h
 	<SDL.h>
 	<SDL_image.h>
 	"texture.h"
 	"energy.h"
+	"sound.h"
 
 1745919529 d:\code\sdlproject\block.h
 	<SDL.h>
@@ -53,7 +52,7 @@
 	"texture.h"
 	"ball.h"
 
-1746121908 source:d:\code\sdlproject\window.cpp
+1746381714 source:d:\code\sdlproject\window.cpp
 	"window.h"
 	"defs.h"
 	"exception.h"
@@ -65,11 +64,12 @@
 1746003091 source:d:\code\sdlproject\texture.cpp
 	"texture.h"
 
-1746003091 source:d:\code\sdlproject\ball.cpp
+1746386074 source:d:\code\sdlproject\ball.cpp
 	<cmath>
 	<iostream>
 	"ball.h"
 	"texture.h"
+	"sound.h"
 
 1746004747 source:d:\code\sdlproject\block.cpp
 	<cmath>
@@ -88,7 +88,7 @@
 1745901454 source:d:\code\sdlproject\energy.cpp
 	"energy.h"
 
-1746191169 d:\code\sdlproject\lever.h
+1746385997 d:\code\sdlproject\lever.h
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -104,7 +104,7 @@
 	"block.h"
 	"score.h"
 
-1746191869 source:d:\code\sdlproject\lever.cpp
+1746386011 source:d:\code\sdlproject\lever.cpp
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -178,8 +178,32 @@
 	"font.h"
 	"defs.h"
 
-1746256370 source:d:\code\sdlproject\score.cpp
+1746384128 source:d:\code\sdlproject\score.cpp
 	<string>
 	<fstream>
 	"score.h"
+
+1746383703 source:d:\code\sdlproject\highscore.cpp
+	"highscore.h"
+	"background.h"
+	"button.h"
+	"score.h"
+	"window.h"
+	"game.h"
+	"defs.h"
+
+1746383716 d:\code\sdlproject\highscore.h
+	"background.h"
+	"button.h"
+	"score.h"
+	"window.h"
+	"game.h"
+
+1746386101 source:d:\code\sdlproject\sound.cpp
+	<SDL.h>
+	"sound.h"
+
+1746386121 d:\code\sdlproject\sound.h
+	<SDL_mixer.h>
+	"defs.h"
 

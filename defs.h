@@ -10,5 +10,7 @@
 #define BACKGROUND   "image\\bikiniBottom.jpg"
 #define FONT         "font\\Purisa-BoldOblique.ttf"
 #define HIGHSCORE    "highscore.txt"
+#define MUSIC        "sound\\RunningAway.mp3"
+#define JUMPSOUND    "sound\\jump.wav"
 
 #endif // DEFS_H
