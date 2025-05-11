@@ -6,8 +6,8 @@
 
 struct Music{
     Mix_Music *music;
-    Music();
 
+    Music();
     void play();
     void quit();
 

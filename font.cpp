@@ -18,7 +18,6 @@ void Font::createTexture( const char* text ){
 
     if (!textSurface){
         SDL_Log("Failed to render text surface: %s", TTF_GetError());
-        SDL_FreeSurface( textSurface );
         return;
     }
 

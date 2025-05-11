@@ -1,5 +1,7 @@
 #include "texture.h"
 
+#include "defs.h"
+
 Texture::Texture( SDL_Renderer *_renderer, const char *filename):
     renderer { _renderer },
     texture { IMG_LoadTexture(renderer, filename) }

@@ -13,4 +13,5 @@
 #define MUSIC        "sound\\RunningAway.mp3"
 #define JUMPSOUND    "sound\\jump.wav"
 
+
 #endif // DEFS_H

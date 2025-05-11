@@ -41,6 +41,7 @@ void Menu::event(){
                         quit();
                         game = Game::Level;
                     }
+
                     if( highScoreButton.click( x, y ) ){
                         quit();
                         game = Game::HighScore;

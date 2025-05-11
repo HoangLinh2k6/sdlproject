@@ -7,6 +7,9 @@
 #include "window.h"
 #include "game.h"
 #include "button.h"
+#include "sound.h"
+
+
 
 struct Menu{
     Menu( window& _win );

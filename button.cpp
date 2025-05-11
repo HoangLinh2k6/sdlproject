@@ -1,3 +1,5 @@
+#include <string>
+
 #include "button.h"
 #include "defs.h"
 

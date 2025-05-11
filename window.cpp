@@ -29,7 +29,6 @@ void window::init() {
        logErrorAndExit( "SDL_mixer could not initialize! SDL_mixer Error: %s\n",
                         Mix_GetError() );
     }
-
 }
 
 void window::quit()

@@ -1,4 +1,5 @@
 #include <SDL.h>
+
 #include "sound.h"
 
 Music::Music():
@@ -11,9 +12,8 @@ Music::Music():
     }
 }
 
-void Music::play(){
-    if( music == nullptr ) return;
 
+void Music::play(){
     if( Mix_PlayingMusic() == 0 ){
         Mix_PlayMusic( music, -1 );
     }
@@ -21,6 +21,8 @@ void Music::play(){
         Mix_ResumeMusic();
     }
 }
+
+
 
 void Music::quit(){
     Mix_FreeMusic( music );
