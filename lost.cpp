@@ -17,10 +17,14 @@ Lost::Lost( window _win ):
 
 void Lost::render(){
     background.render();
-    highScore.renderHighScore( 150, 100 );
+    highScore.renderScore( 200, 100 );
     menuButton.render();
     exitButton.render();
     win.update();
+}
+
+void Lost::setScore( int score ){
+    highScore.score = score;
 }
 
 void Lost::event(){

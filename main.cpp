@@ -25,7 +25,7 @@ Game menu( window& win ){
     menu.quit();
     return menu.game;
 }
-Game lever( window& win ){
+Game lever( window& win, int& score ){
     Lever lever( win );
 
     while( !lever.endgame ){
@@ -37,14 +37,14 @@ Game lever( window& win ){
 
         SDL_Delay( lever.delay );
     }
-
+    score = lever.getNewScore();
     lever.quit();
     return Game::Lost;
 }
 
-Game lost( window& win ){
+Game lost( window& win, int& score ){
     Lost lost( win );
-
+    lost.setScore( score );
     while( lost.game == Game::Lost ){
         lost.render();
         lost.event();
@@ -71,14 +71,15 @@ int main( int argc , char* argv[] ){
     win.init();
     Music music;
     music.play();
+    int score;
     std::srand(std::time(nullptr));
     Game game = Game::Menu;
     while( game != Game::EndGame ){
         switch( game ){
-            case Game::Menu     : game = menu     ( win ); break;
-            case Game::HighScore: game = highScore( win ); break;
-            case Game::Level    : game = lever    ( win ); break;
-            case Game::Lost     : game = lost     ( win ); break;
+            case Game::Menu     : game = menu     ( win );        break;
+            case Game::HighScore: game = highScore( win );        break;
+            case Game::Level    : game = lever    ( win, score ); break;
+            case Game::Lost     : game = lost     ( win, score ); break;
         }
     }
     music.quit();

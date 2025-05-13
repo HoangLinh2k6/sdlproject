@@ -107,6 +107,10 @@ void Lever::deleteBlock(){
     }
 }
 
+int Lever::getNewScore(){
+    return score.score;
+}
+
 void Lever::gameSpeed(){
     if( energy.useEnergy ) delay = 50;
     else delay = 100;

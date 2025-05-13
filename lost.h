@@ -18,6 +18,7 @@ struct Lost{
     Lost( window _win );
     Game game = Game::Lost;
 
+    void setScore( int score );
     void render();
     void event();
     void quit();

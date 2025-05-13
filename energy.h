@@ -7,7 +7,7 @@
 #include "window.h"
 
 struct Energy{
-    int energy = 0;
+    int energy = 70;
     bool useEnergy = false;
     SDL_Renderer *renderer;
 

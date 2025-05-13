@@ -30,6 +30,7 @@ struct Lever{
 
     Lever( window& _win);
 
+    int  getNewScore();
     void event();
     void logic();
     void render();

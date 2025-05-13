@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1746441403 source:d:\code\sdlproject\main.cpp
+1747113039 source:d:\code\sdlproject\main.cpp
 	<cstdlib>
 	<ctime>
 	<SDL.h>
@@ -81,7 +81,7 @@
 	"texture.h"
 	"ball.h"
 
-1745928019 d:\code\sdlproject\energy.h
+1747108498 d:\code\sdlproject\energy.h
 	<iostream>
 	<SDL.h>
 	"window.h"
@@ -89,7 +89,7 @@
 1746956037 source:d:\code\sdlproject\energy.cpp
 	"energy.h"
 
-1746385997 d:\code\sdlproject\lever.h
+1747112566 d:\code\sdlproject\lever.h
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -105,7 +105,7 @@
 	"block.h"
 	"score.h"
 
-1746386011 source:d:\code\sdlproject\lever.cpp
+1747112896 source:d:\code\sdlproject\lever.cpp
 	<cstdlib>
 	<ctime>
 	<vector>
@@ -150,7 +150,7 @@
 	"game.h"
 	"button.h"
 
-1746193437 source:d:\code\sdlproject\lost.cpp
+1747112865 source:d:\code\sdlproject\lost.cpp
 	<SDL.h>
 	"lost.h"
 	"defs.h"
@@ -159,7 +159,7 @@
 	"game.h"
 	"button.h"
 
-1746193365 d:\code\sdlproject\lost.h
+1747112856 d:\code\sdlproject\lost.h
 	<SDL.h>
 	"background.h"
 	"window.h"
